@@ -26,10 +26,14 @@ describe('Categories Repository', () => {
 
   it('can create a category and then get the category', async () => {
     let result = await catRepository.post({name:'Items', description:'It holds Items'});
-    
+        
     expect(result).toBeDefined();
     expect(result.name).toBe('Items');
     expect(result._id).toBeDefined();
+   
+    let resultFromDb = await catRepository.get(result._id);
+  
+    expect(resultFromDb._id).toBeDefined();
 
   });
 
