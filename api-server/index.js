@@ -7,6 +7,10 @@ const mongooseOptions = {
   useNewUrlParser:true,
   useCreateIndex: true,
 };
-mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
 
-require('./src/app.js').start(process.env.PORT);
+const MONGODB_URI = process.env.MONGODB_URI ||
+  'mongodb://localhost/mongooseIsStupidGiveMeARealDatabase';
+
+mongoose.connect(MONGODB_URI, mongooseOptions);
+
+require('./src/app.js').start(process.env.PORT || 3000);
