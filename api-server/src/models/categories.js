@@ -25,11 +25,14 @@ class Categories {
   }
 
 //update a category?  
-  put(_id, record) {
+  put(_id, record){
+    let changedCat = 
   }
+    
 
 //DESTROY!!!!  
   delete(_id) {
+
   }
 
 }
