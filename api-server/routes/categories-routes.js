@@ -6,6 +6,8 @@ const router = express.Router();
 const CatRepository = require('../src/models/categories');
 const catRepository = new Categories();
 
+
+//put in all the various routes from app.js
 router.get('/categories', (req, res, next) => {
   catRepository.getAll()
     .then(data => {

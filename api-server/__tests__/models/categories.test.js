@@ -27,13 +27,27 @@ describe('Categories Repository', () => {
   it('can create a category and then get the category', async () => {
     let result = await catRepository.post({name:'Items', description:'It holds Items'});
     
-    console.log(result._id);
+    console.log(`this is the thing i am trying to log ${result._id}`);
     expect(result).toBeDefined();
     expect(result.name).toBe('Items');
     expect(result._id).toBeDefined();
+    expect(result._id.toString()).toEqual(result._id.toString());
 
     let resultFromDb = await catRepository.get()
-    
+    console.log(resultFromDb)
+    expect(resultFromDb).toBeDefined();
+    expect(resultFromDb.name).toBe('Items');
+    expect(resultFromDb._id).toBeDefined();
+    expect(resultFromDb._id.toString()).toEqual(resultFromDb._id.toString());
+    console.log(resultFromDb);
   });
+
+
+  it('should update a new category', async () => {
+    
+
+  });
+
+
 
 });

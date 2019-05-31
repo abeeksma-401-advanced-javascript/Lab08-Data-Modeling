@@ -21,18 +21,21 @@ class Categories {
 //create a category
   post(record) {
     var category = new Category (record);
+    console.log(`this is the newly posted Cat ${category}`)
     return category.save();
   }
 
 //update a category?  
   put(_id, record){
-    let changedCat = 
+    let updatedCat = await Category.findOne(_id);
+    updatedCat = Object.assign(save, entry)
+    await updatedCat.save();
   }
     
 
 //DESTROY!!!!  
   delete(_id) {
-
+    Cateogory.deleteOne()
   }
 
 }
