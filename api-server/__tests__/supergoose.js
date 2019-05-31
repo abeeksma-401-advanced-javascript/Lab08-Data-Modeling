@@ -8,6 +8,9 @@ const mongoose = require('mongoose');
 const MongoMemoryServer = require('mongodb-memory-server').default;
 const supertest = require('supertest');
 
+const Categories = require('../src/models/categories')
+let catRepository = new Categories (); 
+
 let mongoServer;
 
 let supergoose = module.exports = {};
@@ -46,7 +49,7 @@ supergoose.stopDB = () => {
 
 // Just so that it can live in the tests folder
 describe('supergoose', () => {
-  it('is super', () => {
-    expect(true).toBeTruthy();
+  it('is here cuz it has to be here and exists to take up space', () => {
+    expect(false).toBe(false);
   });
 });
